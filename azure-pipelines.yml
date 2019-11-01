@@ -20,3 +20,15 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'Free Trial(910726b2-dbee-4f5e-bbbf-1a8fbce18f66)'
+    AuthenticationType: 'server'
+    ServerName: 'agendaBDServer'
+    DatabaseName: 'agendaBD'
+    SqlUsername: 'agendaadm'
+    SqlPassword: 'admPass1'
+    deployType: 'SqlTask'
+    SqlFile: 'src/main\webapp\database.sql'
+    IpDetectionMethod: 'AutoDetect'
