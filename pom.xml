@@ -59,7 +59,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.1</version>
 				<configuration>
-					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<warSourceDirectory>target</warSourceDirectory>
 				</configuration>
 			</plugin>
 		</plugins>

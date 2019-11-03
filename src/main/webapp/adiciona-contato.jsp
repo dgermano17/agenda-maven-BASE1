@@ -66,7 +66,7 @@
 				<div class="card-body">
 					<div class="form-group col-md-6">
 						<label for="end">Logradouro</label> 
-						<input type="text" value="${param.endereco}" class="form-control" id=""logradouro"" name="logradouro" placeholder="Logradouro">
+						<input type="text" value="${param.endereco}" class="form-control" id="logradouro" name="logradouro" placeholder="Logradouro">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="end">CEP</label> 
