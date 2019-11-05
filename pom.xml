@@ -45,24 +45,34 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	</dependencies>
 	
 	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.1</version>
-				<configuration>
-					<warSourceDirectory>target</warSourceDirectory>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<sourceDirectory>src/main/java</sourceDirectory>
+	<plugins>
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.7.0</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				<deployment>
+					<resources>
+						<resource>
+							<directory>${project.basedir}/target</directory>
+							<includes>
+								<include>*.war</include>
+							</includes>
+						</resource>
+					</resources>
+				</deployment>
+			</configuration>
+		</plugin>
+		<plugin>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.2.1</version>
+			<configuration>
+				<warSourceDirectory>target</warSourceDirectory>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 
 </project>
